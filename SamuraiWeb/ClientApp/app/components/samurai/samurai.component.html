@@ -1,0 +1,27 @@
+<h1>The story of Samurai</h1>
+
+<p>Brave Samurai table</p>
+
+<p *ngIf="!samurais"><em>Loading...</em></p>
+
+<table class='table'>
+    <!--*ngIf="samurais"-->
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let samurai of samurais">
+        <td>{{ samurai.id }}</td>
+        <td>{{ samurai.name}}</td>
+    </tr>
+    </tbody>
+</table>
+<md-card>
+    <md-checkbox [checked]="true" align="end">
+        I come after my label.
+    </md-checkbox>
+</md-card>
+<!--<samurai-form></samurai-form>-->
