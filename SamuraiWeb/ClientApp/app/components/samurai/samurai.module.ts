@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { UniversalModule } from 'angular2-universal';
+
 //import { BrowserModule }  from '@angular/platform-browser';
-//import { FormsModule, ReactiveFormsModule }  from '@angular/forms';
+import {  ReactiveFormsModule }  from '@angular/forms';
 //import { HttpModule }    from '@angular/http';
 
 //import { AppRoutingModule }     from '../../app-routing.module';
@@ -14,21 +14,23 @@ import { MaterialModule } from '@angular/material';
 
 import { SamuraiComponent }          from './samurai.component';
 import { SamuraiService }          from './samurai.service';
-//import { SamuraiFormComponent } from './samurai-form.component';
+import { SamuraiFormComponent } from './samurai-form.component';
+
+import { UniversalModule } from 'angular2-universal'; // load the universal module last - https://github.com/angular/universal/issues/536#issuecomment-247762794
 
 @NgModule({
     imports: [
       UniversalModule,
     //BrowserModule,
-    //FormsModule,
-    //ReactiveFormsModule,
+        MaterialModule,
+    ReactiveFormsModule
     //HttpModule,
     //AppRoutingModule,
-    MaterialModule
+    
   ],
   declarations: [
     SamuraiComponent,
-    //SamuraiFormComponent
+    SamuraiFormComponent
   ],
   providers: [ SamuraiService ],
   exports:[

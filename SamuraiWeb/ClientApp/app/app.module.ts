@@ -28,12 +28,12 @@ import { MaterialModule } from '@angular/material';
         FetchDataComponent, //SamuraiComponent
     ],
     imports: [
-        UniversalModule, // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.
         AppRoutingModule,
         //FormsModule, ReactiveFormsModule,
         MaterialModule,
-        SamuraiModule //load the samurai module with it's own components
-    ]
+        SamuraiModule, //load the samurai module with it's own components
+        UniversalModule, //https://github.com/angular/universal-starter/issues/167 - OPEN???? Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.
+        ]
 })
 export class AppModule {
 }

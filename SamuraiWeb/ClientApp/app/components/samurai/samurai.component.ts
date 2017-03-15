@@ -6,6 +6,8 @@ import { Subject } from 'rxjs/Subject';
 import { SamuraiService } from './samurai.service';
 import { Samurai } from './samurai.model';
 
+//import { MaterialModule } from '@angular/material';
+
 @Component({
     //moduleId: "test"module.id,
     selector: 'samurai',
