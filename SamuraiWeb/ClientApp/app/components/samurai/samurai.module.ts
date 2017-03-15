@@ -16,16 +16,17 @@ import { SamuraiComponent }          from './samurai.component';
 import { SamuraiService }          from './samurai.service';
 import { SamuraiFormComponent } from './samurai-form.component';
 
-import { UniversalModule } from 'angular2-universal'; // load the universal module last - https://github.com/angular/universal/issues/536#issuecomment-247762794
-
+import { UniversalModule } from 'angular2-universal'; 
 @NgModule({
     imports: [
-      UniversalModule,
+      
     //BrowserModule,
         MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
     //HttpModule,
     //AppRoutingModule,
+    UniversalModule // load the universal module last - https://github.com/angular/universal/issues/536#issuecomment-247762794
+
     
   ],
   declarations: [
