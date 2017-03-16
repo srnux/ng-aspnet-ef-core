@@ -25,7 +25,8 @@ function ratingRange(min: number, max: number): ValidatorFn {
 
 @Component({
     selector: 'samurai-form',
-    templateUrl: 'samurai-form.component.html'
+    templateUrl: 'samurai-form.component.html',
+    styleUrls: ['samurai-form.component.scss']
 })
 export class SamuraiFormComponent implements OnInit {
     samuraiForm: FormGroup; //form model

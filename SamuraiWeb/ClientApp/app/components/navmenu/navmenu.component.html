@@ -1,63 +1,26 @@
-<!--<div class='main-nav'>-->
 <div class='top-nav'>
     <!-- !!!!!!!material buttons not working with server pre-rendering!!!!!!! -->
     <md-toolbar color="primary">
-        <span>GameViewer</span>
-        <span class="spacer"></span>
+        <span>ng-aspnet-ef-core</span>
+        <span class="md-toolbar-spacer"></span>
         <button md-icon-button [mdMenuTriggerFor]="menu">
             <md-icon>more_vert</md-icon>
         </button>
         <md-menu #menu="mdMenu">
-            <button md-menu-item>
-                <md-icon>fingerprint</md-icon>
-                <span>Login</span>
+            <button [routerLink]="['/home']" md-menu-item>
+                <!--<span class='glyphicon glyphicon-home'></span> Home-->
+                <md-icon>store_mall_directory</md-icon>
+                <span>Home</span>
             </button>
-            <button md-menu-item disabled>
-                <md-icon>announcement</md-icon>
-                <span>Issues</span>
+            <button md-menu-item [routerLink]="['/samurai']">
+                <md-icon>face</md-icon>
+                <span>Samurai</span>
             </button>
-            <button md-menu-item>
-                <md-icon>notifications_off</md-icon>
-                <span>Disable alerts</span>
+            <button md-menu-item [routerLink]="['/fetch-data']">
+                <md-icon>storage</md-icon>
+                <span>Fetch data</span>
             </button>
         </md-menu>
     </md-toolbar>
 </div>
 
-    <!--<div class='navbar navbar-inverse'>
-        <div class='navbar-header'>
-            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
-                <span class='sr-only'>Toggle navigation</span>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
-            </button>
-            <a class='navbar-brand' [routerLink]="['/home']">Samurai</a>
-        </div>
-        <div class='clearfix'></div>
-        <div class='navbar-collapse collapse'>
-            <ul class='nav navbar-nav'>
-                <li [routerLinkActive]="['link-active']">
-                    <a [routerLink]="['/home']">
-                        <span class='glyphicon glyphicon-home'></span> Home
-                    </a>
-                </li>
-                <li [routerLinkActive]="['link-active']">
-                    <a [routerLink]="['/counter']">
-                        <span class='glyphicon glyphicon-education'></span> Counter
-                    </a>
-                </li>
-                <li [routerLinkActive]="['link-active']">
-                    <a [routerLink]="['/fetch-data']">
-                        <span class='glyphicon glyphicon-th-list'></span> Fetch data
-                    </a>
-                </li>
-                <li [routerLinkActive]="['link-active']">
-                    <a [routerLink]="['/samurai']">
-                        <span class='glyphicon glyphicon-th-list'></span> Samurai
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>-->
-    <!--</div>-->
