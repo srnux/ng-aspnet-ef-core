@@ -11,7 +11,9 @@ Typescript 2.2
 Webpack 2.2.0
 
 Angular Universal
+
 ################################################
+
 Domain model and DA projects based on Julie Lerman (@julielerman) Pluralsight EF videos.
 
 Created with Visual Studio 2017.
