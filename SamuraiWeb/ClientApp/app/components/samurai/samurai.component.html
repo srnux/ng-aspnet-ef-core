@@ -1,24 +1,36 @@
-<h1>The story of Samurai</h1>
 
-<p>Brave Samurai table</p>
+<md-card>
+    <h1>The story of Samurai</h1>
 
-<p *ngIf="!samurais"><em>Loading...</em></p>
+    <p>Brave Samurai table</p>
 
-<table class='table'>
-    <!--*ngIf="samurais"-->
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Name</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let samurai of samurais">
-        <td>{{ samurai.id }}</td>
-        <td>{{ samurai.name}}</td>
-    </tr>
-    </tbody>
-</table>
+    <p *ngIf="!samurais"><em>Loading...</em></p>
+
+    <md-list dense>
+        <h3 md-subheader>Samurais</h3>
+        <md-list-item *ngFor="let samurai of samurais">
+            {{ samurai.name}}
+        </md-list-item>
+    </md-list>
+
+    <!--<table class='table'>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <md-card *ngFor="let samurai of samurais">
+
+                    <td>{{ samurai.id }}</td>
+                    <td>{{ samurai.name}}</td>
+                </md-card>
+            </tr>
+        </tbody>
+    </table>-->
+    <samurai-form></samurai-form>
+</md-card>
 
 
-<samurai-form></samurai-form>

@@ -1,6 +1,7 @@
 <div class='top-nav'>
     <!-- !!!!!!!material buttons not working with server pre-rendering!!!!!!! -->
     <md-toolbar color="primary">
+        <md-icon color="accent">cake</md-icon>
         <span>ng-aspnet-ef-core</span>
         <span class="md-toolbar-spacer"></span>
         <button md-icon-button [mdMenuTriggerFor]="menu">
@@ -9,7 +10,7 @@
         <md-menu #menu="mdMenu">
             <button [routerLink]="['/home']" md-menu-item>
                 <!--<span class='glyphicon glyphicon-home'></span> Home-->
-                <md-icon>store_mall_directory</md-icon>
+                <md-icon>cake</md-icon>
                 <span>Home</span>
             </button>
             <button md-menu-item [routerLink]="['/samurai']">

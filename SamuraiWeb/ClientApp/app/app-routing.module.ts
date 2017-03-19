@@ -6,7 +6,7 @@ import { CounterComponent } from './components/counter/counter.component';
 import { SamuraiComponent } from './components/samurai/samurai.component'
 
 const routes: Routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: '', redirectTo: 'samurai', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'counter', component: CounterComponent },
     { path: 'fetch-data', component: FetchDataComponent },

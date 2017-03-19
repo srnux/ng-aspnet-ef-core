@@ -2,3 +2,5 @@ Samurai.Data/bin/
 Samurai.Data/obj/
 Samurai.Domain/bin/
 Samurai.Domain/obj/
+node_modules/mkdirp/test/root.js
+node_modules/
