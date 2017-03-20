@@ -11,43 +11,91 @@
                   (ngSubmit)="save()"
                   [formGroup]="samuraiForm">
                 <!--<fieldset>-->
-                            <md-input-container style="width: 100%" class="form-group"
+                <div>
+                    <md-input-container style="width: 40%" class="form-group"
                                         [ngClass]="{'has-error': (samuraiForm.get('firstName').touched ||
                                                     samuraiForm.get('firstName').dirty) &&
                                                     !samuraiForm.get('firstName').valid }" dividerColor="warn">
-                                <input mdInput #firstName formControlName="firstName" placeholder="First Name (50 max)">
-                                <md-hint align="left">{{firstName.value.length}} / 50</md-hint>
-                                <md-hint  align="end" class="error" *ngIf="(samuraiForm.get('firstName').touched ||
+                        <input mdInput #firstName formControlName="firstName" placeholder="First Name (50 max)">
+                        <md-hint align="left">{{firstName.value.length}} / 50</md-hint>
+                        <md-hint align="end" class="error" *ngIf="(samuraiForm.get('firstName').touched ||
                                                     samuraiForm.get('firstName').dirty) &&
                                                     samuraiForm.get('firstName').errors">
-                                    <span color="warn" *ngIf="samuraiForm.get('firstName').errors.required">
-                                        Please enter your first name.
-                                    </span>
-                                    <span color="warn" *ngIf="samuraiForm.get('firstName').errors.minlength">
-                                        The first name must be longer than 3 characters.
-                                    </span>
-                                    <span color="warn" *ngIf="samuraiForm.get('firstName').errors.maxlength">
-                                        The first name must be shorter than 50 characters.
-                                    </span>
-                                </md-hint>
-                            </md-input-container>
-                            <md-input-container style="width: 100%">
-                                <input mdInput #lastName formControlName="lastName" placeholder="Last Name (50 max)">
-                                <md-hint align="left">{{lastName.value.length}} / 50</md-hint>
-                                <md-hint align="end" class="error" *ngIf="(samuraiForm.get('lastName').touched ||
+                            <span color="warn" *ngIf="samuraiForm.get('firstName').errors.required">
+                                Please enter your first name.
+                            </span>
+                            <span color="warn" *ngIf="samuraiForm.get('firstName').errors.minlength">
+                                The first name must be longer than 3 characters.
+                            </span>
+                            <span color="warn" *ngIf="samuraiForm.get('firstName').errors.maxlength">
+                                The first name must be shorter than 50 characters.
+                            </span>
+                        </md-hint>
+                    </md-input-container>
+                </div>
+                <div>
+                    <md-input-container style="width: 40%"
+                                        class="form-group"
+                                        [ngClass]="{'has-error': (samuraiForm.get('lastName').touched ||
+                                                    samuraiForm.get('lastName').dirty) &&
+                                                    !samuraiForm.get('lastName').valid }">
+                        <input mdInput #lastName formControlName="lastName" placeholder="Last Name (50 max)">
+                        <md-hint align="left">{{lastName.value.length}} / 50</md-hint>
+                        <md-hint align="end" class="error" *ngIf="(samuraiForm.get('lastName').touched ||
                                                     samuraiForm.get('lastName').dirty) &&
                                                     samuraiForm.get('lastName').errors">
-                                    <span  *ngIf="samuraiForm.get('lastName').errors.required">
-                                        Please enter your last name.
-                                    </span>
-                                    <span  *ngIf="samuraiForm.get('lastName').errors.minlength">
-                                        The last name must be longer than 3 characters.
-                                    </span>
-                                    <span  *ngIf="samuraiForm.get('lastName').errors.maxlength">
-                                        The last name must be shorter than 50 characters.
-                                    </span>
-                                </md-hint>
-                            </md-input-container>
+                            <span *ngIf="samuraiForm.get('lastName').errors.required">
+                                Please enter your last name.
+                            </span>
+                            <span *ngIf="samuraiForm.get('lastName').errors.minlength">
+                                The last name must be longer than 3 characters.
+                            </span>
+                            <span *ngIf="samuraiForm.get('lastName').errors.maxlength">
+                                The last name must be shorter than 50 characters.
+                            </span>
+                        </md-hint>
+                    </md-input-container>
+                </div>
+
+                            <!-- email group with email confirmation -->
+                <div formGroupName="emailGroup"
+                        [ngClass]="{'has-error': samuraiForm.get('emailGroup').errors }">
+                    <md-input-container style="width: 40%"
+                                        class="form-group"
+                                        [ngClass]="{'has-error': (samuraiForm.controls.emailGroup.controls.email.touched ||
+                                            samuraiForm.get('emailGroup.email').dirty) &&
+                                            !samuraiForm.get('emailGroup.email').valid }">
+                        <input mdInput #email formControlName="email" placeholder="E-mail (Required)" type="email">
+                        <md-hint align="end" class="error" *ngIf="(samuraiForm.get('emailGroup.email').touched ||
+                                                    samuraiForm.get('emailGroup.email').dirty) &&
+                                                    samuraiForm.get('emailGroup.email').errors">
+                                <span *ngIf="samuraiForm.get('emailGroup.email').errors.required">
+                                    Please enter your email address.
+                                </span>
+                                <span *ngIf="samuraiForm.get('emailGroup.email').errors.pattern">
+                                    Please enter a valid email address.
+                                </span>
+                        </md-hint>
+                    </md-input-container>
+                    <md-input-container style="width: 40%"
+                                        class="form-group"
+                                        [ngClass]="{'has-error': (samuraiForm.get('emailGroup.confirmEmail').touched ||
+                                            samuraiForm.get('emailGroup.confirmEmail').dirty) &&
+                                            !samuraiForm.get('emailGroup.confirmEmail').valid }">
+                        <input mdInput #confirmEmail formControlName="confirmEmail" placeholder="Repeat e-mail (Required)" type="email">
+                        <md-hint align="end" class="error" *ngIf="(samuraiForm.get('emailGroup.confirmEmail').touched ||
+                                                    samuraiForm.get('emailGroup.confirmEmail').dirty) &&
+                                                    (samuraiForm.get('emailGroup.confirmEmail').errors || samuraiForm.get('emailGroup').errors) ">
+                            <span *ngIf="samuraiForm.get('emailGroup.confirmEmail').errors?.required">
+                                Please confirm your email address.
+                            </span>
+                            <span *ngIf="samuraiForm.get('emailGroup').errors?.match">
+                                The confirmation does not match the email address.
+                            </span>
+                        </md-hint>
+                    </md-input-container>
+                    
+                </div>
 
                     <!--<div class="form-group"
                          [ngClass]="{'has-error': (samuraiForm.get('firstName').touched ||
@@ -95,7 +143,7 @@
                     </div>-->
 
                     <!-- email group with email confirmation -->
-                    <div formGroupName="emailGroup"
+                    <!--<div formGroupName="emailGroup"
                          [ngClass]="{'has-error': samuraiForm.get('emailGroup').errors }">
                         <div class="form-group"
                              [ngClass]="{'has-error': (samuraiForm.controls.emailGroup.controls.email.touched ||
@@ -120,7 +168,7 @@
                                         Please enter a valid email address.
                                     </span>
 
-                                    <!-- This one does not work -->
+                                     This one does not work 
                                     <span *ngIf="samuraiForm.get('emailGroup.email').errors.email">
                                         Please enter a valid email address.
                                     </span>
@@ -154,7 +202,7 @@
                                 </span>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
 
                     <div class="form-group"
                          [ngClass]="{'has-error': !samuraiForm.get('phone').valid }">
@@ -350,3 +398,5 @@
 <br>Touched: {{ samuraiForm.touched }}
 <br>Valid: {{ samuraiForm.valid }}
 <br>Value: {{ samuraiForm.value | json }}
+
+<br>Samurai match: {{samuraiForm.get('emailGroup')}} {{samuraiForm.get('emailGroup').errors}}  {{samuraiForm.get('emailGroup').errors?.match}}
