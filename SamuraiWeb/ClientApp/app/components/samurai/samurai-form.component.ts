@@ -46,6 +46,10 @@ export class SamuraiFormComponent implements OnInit, AfterViewInit, OnDestroy {
             confirmEmail: {
                 required: 'Please confirm your email address.',
                 match: 'The confirmation does not match the email address.'
+            },
+            phone: {
+                number: 'Please confirm your email address.',
+                match: 'The confirmation does not match the email address.'
             }
         };
     }

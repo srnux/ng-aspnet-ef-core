@@ -45,9 +45,9 @@
                                         [ngClass]="{'has-error': displayMessage.email}">
                         <input mdInput #email formControlName="email" placeholder="E-mail (Required)" type="email">
                         <md-hint align="end" class="error" *ngIf="displayMessage.email">
-                                <span>
-                                    {{displayMessage.email}}
-                                </span>
+                            <span>
+                                {{displayMessage.email}}
+                            </span>
                         </md-hint>
                     </md-input-container>
                     <md-input-container style="width: 40%"
